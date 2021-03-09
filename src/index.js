@@ -5,7 +5,7 @@ const questions = document.querySelectorAll(".question")
 questions.forEach(question => {
 	const [button, answer] = question.children
 
-	button.addEventListener("click", () => {
+	question.addEventListener("click", () => {
 		closeAll(questions).except(answer)
 		answer.className = answer.className !== "visible" ? "visible" : "hidden"
 	})
