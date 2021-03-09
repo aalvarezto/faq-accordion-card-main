@@ -1,0 +1,7 @@
+{
+	"semi": false,
+	"arrowParens": "avoid",
+	"htmlWhitespaceSensitivity": "strict",
+	"tabWidth": 4,
+	"useTabs": true
+}
