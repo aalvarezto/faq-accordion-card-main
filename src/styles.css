@@ -1,126 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 * {
 	box-sizing: border-box;
 }
-
 body {
 	padding: 0;
 	margin: 0;
-	background-image: linear-gradient(
-		to top,
-		hsl(240, 73%, 65%),
-		hsl(273, 75%, 66%)
-	);
-	background-repeat: unset;
+	background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+	font-family: "Kumbh Sans", sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	color: hsl(238, 29%, 16%);
+	background-attachment: fixed;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
+:is(#logos, .woman, .box, button) {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+}
+h1 {
+	font-size: 1.5rem;
+}
 #card {
-	width: 60rem;
+	width: 56.25rem;
+	height: 30rem;
 	padding: 1rem;
 	background-color: white;
 	border-radius: 1rem;
 	display: flex;
-	justify-content: space-between;
-}
-
-#logos {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	box-shadow: 0rem 2rem 1rem hsla(0, 0%, 0%, 0.3);
 	background-image: url(../images/bg-pattern-desktop.svg);
 	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+	background-size: 95%;
+	background-position: -27.5rem -15rem;
 }
-
+#logos {
+	left: -5rem;
+	bottom: 2rem;
+}
 .woman {
-	width: 25rem;
-	height: 25rem;
-	display: flex;
-	align-items: center;
 	background-image: url(../images/illustration-woman-online-desktop.svg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position-y: center;
-	position: relative;
-	left: -2.5rem;
-	top: 2rem;
+	width: 30rem;
+	height: 30rem;
 }
-
 .box {
+	background-image: url(../images/illustration-box-desktop.svg);
 	width: 10rem;
 	height: 10rem;
-	background-image: url(../images/illustration-box-desktop.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	top: 2.5rem;
-	left: -1rem;
+	left: -1.2rem;
+	bottom: -10rem;
 }
-
 article {
-	width: 40%;
+	margin-top: 1rem;
+	width: 50%;
+	position: relative;
+	right: 2rem;
 }
-
+section {
+	margin: 0.5rem 0;
+	margin-right: 2rem;
+	padding: 1rem 0;
+	border-bottom: solid 1px hsl(240, 5%, 91%);
+}
+section:hover {
+	font-weight: 800;
+	color: hsl(14, 88%, 65%);
+}
+section div {
+	font-weight: 400;
+	color: hsl(240, 6%, 50%);
+}
 button {
-	width: 3rem;
-	height: 1rem;
 	background: none;
+	background-image: url(../images/icon-arrow-down.svg);
+	width: 3rem;
+	height: 0.5rem;
 	border: none;
 	float: right;
 	clear: both;
-	background-image: url("../images/icon-arrow-down.svg");
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: center center;
 }
-
-h1 {
-	margin: 2rem;
-}
-
-section {
-	margin: 0.5rem;
-	padding: 1rem;
-}
-
 .hidden {
 	display: none;
 }
-
-.visible {
-	padding: 0.5rem;
+.toggle {
+	font-weight: 800;
+}
+.toggle button {
+	transform: rotate(180deg);
+}
+.toggle .hidden {
+	padding-top: 0.5rem;
+	padding-right: 2rem;
+	display: block;
 }
 
 @media (max-width: 30rem) {
 	#card {
-		position: absolute;
-		top: 1rem;
 		width: 90%;
-		margin: 3rem;
-		border-collapse: collapse;
+		height: auto;
+		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
+		background: none;
+		background-color: white;
+		margin-top: 10rem;
 	}
-
-	article {
-		width: 100%;
-	}
-
 	#logos {
-		width: 100%;
-		height: 50%;
-	}
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
+		width: 20rem;
+		height: 20rem;
+		background-image: url(../images/bg-pattern-mobile.svg);
+		top: -7rem;
+		left: 0rem;
+	}
+	.woman {
+		width: 23rem;
+		height: 23rem;
+		background-image: url(../images/illustration-woman-online-mobile.svg);
+		top: -5rem;
+		left: -1.4rem;
+		background-repeat: no-repeat;
+	}
+	h1 {
+		width: 100%;
+		text-align: center;
+	}
+	.box {
+		display: none;
+	}
+	article {
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: auto;
+		margin-top: -10rem;
+		margin-bottom: 10rem;
+	}
 	section {
-		padding-left: 0;
-		padding-right: 0;
-		margin-left: 0;
 		margin-right: 0;
+	}
+	.toggle {
+		font-weight: 800;
+		color: black;
 	}
 }

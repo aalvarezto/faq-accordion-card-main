@@ -2,12 +2,14 @@
 
 const questions = document.querySelectorAll(".question")
 
+questions[1].classList.toggle("toggle")
+
 questions.forEach(question => {
-	const [button, answer] = question.children
+	const [, answer] = question.children
 
 	question.addEventListener("click", () => {
 		closeAll(questions).except(answer)
-		answer.className = answer.className !== "visible" ? "visible" : "hidden"
+		question.classList.toggle("toggle")
 	})
 })
 
@@ -15,8 +17,7 @@ function closeAll(x) {
 	return {
 		except: y =>
 			Array.from(x)
-				.map(question => question.children[1])
-				.filter(answer => answer.innerText !== y.innerText)
-				.forEach(answer => (answer.className = "hidden")),
+				.filter(el => el.children[1].innerText !== y.innerText)
+				.forEach(question => question.classList.remove("toggle")),
 	}
 }
