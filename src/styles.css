@@ -67,9 +67,11 @@ section {
 	padding: 1rem 0;
 	border-bottom: solid 1px hsl(240, 5%, 91%);
 }
-section:hover {
+section:hover,
+section:active {
 	font-weight: 800;
 	color: hsl(14, 88%, 65%);
+	cursor: pointer;
 }
 section div {
 	font-weight: 400;
@@ -105,7 +107,6 @@ button {
 		height: auto;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		background: none;
 		background-color: white;
@@ -116,7 +117,6 @@ button {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
 		width: 20rem;
 		height: 20rem;
 		background-image: url(../images/bg-pattern-mobile.svg);
@@ -148,6 +148,11 @@ button {
 	}
 	section {
 		margin-right: 0;
+	}
+	section:hover,
+	section:active {
+		font-weight: 800;
+		color: hsl(238, 29%, 16%);
 	}
 	.toggle {
 		font-weight: 800;
